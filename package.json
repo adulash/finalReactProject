@@ -1,0 +1,15 @@
+{
+  "name": "final-react-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React Blog Project",
+  "scripts": {
+    "install": "cd blogs && npm ci",
+    "build": "cd blogs && npm run build",
+    "start": "cd blogs && npx vite preview --host 0.0.0.0 --port ${PORT:-3000}"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
