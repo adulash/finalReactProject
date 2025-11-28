@@ -26,12 +26,9 @@ RUN npm install -g serve
 # Copy built files from builder
 COPY --from=builder /app/dist ./dist
 
-# Expose port
-EXPOSE 3000
+# Expose port (will be overridden by Coolify)
+EXPOSE 8080
 
-# Set environment variable
-ENV PORT=3000
-
-# Start the server
-CMD sh -c "serve -s dist -l ${PORT:-3000}"
+# Start the server (uses PORT from environment variable set by Coolify)
+CMD sh -c "serve -s dist -l ${PORT:-8080}"
 
